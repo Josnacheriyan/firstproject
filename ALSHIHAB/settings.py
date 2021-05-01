@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
+import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -78,11 +79,11 @@ WSGI_APPLICATION = 'ALSHIHAB.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        # 'NAME': 'd3sg5c9k0bv1q9',
-        # 'USER': 'ptnpaltajfbfds' ,
-        # 'PASSWORD': 'fff6c8e46115da930ccf6c2daa723530639a4ccb7cceba6e5b4aaa09affbf064',
-        # 'HOST': 'ec2-3-212-75-25.compute-1.amazonaws.com',
-        # 'PORT': 5432,
+        'NAME': 'd3sg5c9k0bv1q9',
+        'USER': 'ptnpaltajfbfds' ,
+        'PASSWORD': 'fff6c8e46115da930ccf6c2daa723530639a4ccb7cceba6e5b4aaa09affbf064',
+        'HOST': 'ec2-3-212-75-25.compute-1.amazonaws.com',
+        'PORT': 5432,
     }
 }
 
@@ -140,3 +141,5 @@ EMAIL_HOST_PASSWORD = 'ccjosnamca@25'
 EMAIL_USE_TLS = True
 #EMAIL_USE_SSL = False
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+django_heroku.settings(locals())
